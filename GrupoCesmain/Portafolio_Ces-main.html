@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRUPO CES</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f0f0f0;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1 {
+            color: blue;
+        }
+        .description {
+            margin: 20px auto;
+            width: 50%;
+            text-align: center;
+        }
+        #image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .image {
+            margin: 10px;
+            position: relative;
+        }
+        .image:hover .image-description {
+            display: block;
+        }
+        .image-description {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        footer {
+            background-color: blue;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>GRUPO CES</h1>
+        <div class="description">
+            <p>Breve descripción del grupo aquí.</p>
+        </div>
+    </header>
+
+    <div id="image-container">
+        <div class="image">
+            <img src="imagen1.jpg" alt="Imagen 1">
+            <div class="image-description">Descripción de la imagen 1</div>
+        </div>
+        <div class="image">
+            <img src="imagen2.jpg" alt="Imagen 2">
+            <div class="image-description">Descripción de la imagen 2</div>
+        </div>
+        <div class="image">
+            <img src="imagen3.jpg" alt="Imagen 3">
+            <div class="image-description">Añadir integrante</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>¿Qué necesitas? <span>&#9660;</span></p>
+    </footer>
+</body>
+</html>

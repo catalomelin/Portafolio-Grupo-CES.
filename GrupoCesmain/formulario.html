@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="path/to/your/style.css"> <!-- Asegúrate de enlazar correctamente tu archivo CSS -->
+    
+    <title>Formulario para añadir integrante</title>
+</head>
+<body>
+    <h1>Formulario para añadir integrante</h1>
+
+    <form id="integrante-form">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        
+        <label for="imagen">Imagen:</label>
+        <input type="file" id="imagen" name="imagen"><br><br> <!-- Input para subir una imagen -->
+
+        <label for="descripcion">Descripción:</label><br>
+        <textarea id="descripcion" name="descripcion" rows="4" cols="50" required></textarea><br><br>
+        
+        <button type="submit">Añadir integrante</button>
+    </form>
+
+    <script>
+        document.getElementById("integrante-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+
+            // Obtener los valores del formulario
+            var nombre = document.getElementById("nombre").value;
+            var imagen = document.getElementById("imagen").files[0];
+            var descripcion = document.getElementById("descripcion").value;
+
+            // Aquí puedes hacer lo que necesites con los datos del formulario, por ejemplo, enviarlos a través de AJAX a un servidor para su procesamiento
+
+            // Por simplicidad, solo mostraremos los datos por consola
+            console.log("Nombre:", nombre);
+            console.log("Imagen:", imagen);
+            console.log("Descripción:", descripcion);
+
+            // Aquí puedes redirigir a la página principal u otra página según sea necesario
+            window.location.href = "index.html"; // Cambia "index.html" por la ruta correcta de tu página principal
+        });
+    </script>
+</body>
+</html>

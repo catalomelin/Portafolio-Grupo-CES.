@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    color: rgb(41, 200, 208);
+}
+
+.card {
+    display: inline-block;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-info {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    box-sizing: border-box;
+    transition: bottom 0.3s ease;
+}
+
+.card:hover .card-info {
+    bottom: 0;
+}
+
+.description {
+    margin: 20px auto;
+    width: 50%;
+    text-align: center;
+}
+
+#image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.image {
+    margin: 10px;
+    position: relative;
+    max-width: 100%; /* Cambiado a porcentaje para ser responsive */
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+}
+
+.image-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px;
+}
+
+.image-description {
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    text-align: center;
+    z-index: 1;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    opacity: 0; /* Inicialmente oculto */
+    visibility: hidden; /* Inicialmente oculto */
+    transition: opacity 0.3s ease, visibility 0.3s; /* Transición de opacidad y visibilidad */
+    pointer-events: none; /* Desactivar eventos de puntero cuando está oculto */
+}
+
+.card:hover .image-description {
+    opacity: 1; /* Mostrar al pasar el cursor */
+    visibility: visible; /* Mostrar al pasar el cursor */
+    pointer-events: auto; /* Habilitar eventos de puntero cuando se muestra */
+}
+
+.card:not(:hover) .image-description {
+    opacity: 0; /* Ocultar si no se pasa el cursor */
+    visibility: hidden; /* Ocultar si no se pasa el cursor */
+    pointer-events: none; /* Desactivar eventos de puntero si no se pasa el cursor */
+}
+
+footer {
+    background-color: rgb(86, 203, 242);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .description {
+        width: 80%;
+    }
+    
+    .image-title {
+        width: 80%;
+    }
+    
+    .image-description {
+        width: 90%;
+    }
+}
